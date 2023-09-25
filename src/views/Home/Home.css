@@ -7,7 +7,7 @@
 
 .app-tittle {
     text-align: center;
-    background-color: #b380ff;
+    background-color: hsl(315, 95%, 26%);
     width: 400px;
     padding: 10px 50px;
     display: block;
@@ -34,8 +34,9 @@
     margin: 25px 10px;
 }
 
+
 .btn-add-task {
-    background-color: #b380ff;
+    background-color: #98098a;
     color: #fff;
     border-radius: 30px;
     padding: 10px 5px;
@@ -47,10 +48,12 @@
     display: flex;
     justify-content: space-around;
 }
-.task-container{
-    height:400px;
+   
+.show-list-contain{
     overflow-y: scroll;
+    height: 500px ;
+
 }
-.task-container::-webkit-scrollbar{
+.show-list-contain::-webkit-scrollbar{
     width: 5px;
 }

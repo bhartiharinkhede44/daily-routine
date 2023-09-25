@@ -5,6 +5,7 @@ import { useState } from 'react'
 import showToast from 'crunchy-toast';
 
 import { saveListTOLocalStorage } from './../../util/LocalStorage';
+import Footer from '../../component/Footer/Footer';
 
 const Home = () => {
     const [taskList, setTaskList] = useState([
@@ -139,24 +140,25 @@ const Home = () => {
     }
     return (
         <div className='container'>
-            <h1 className='app-tittle'>Pinklist 📃</h1>
+            <h1 className='app-tittle'> DAILY-ROUTINE📃</h1>
             <div className='todo-flex-container'>
                 <div>
                     <h2 className='text-center'>Show List</h2>
                     <div className='task-container'>
-                        {
-                            taskList.map((taskItem, index) => {
-                                const { id, title, description, priority } = taskItem;
-                                return <Task id={id} title={title} description={description} priority={priority} key={index} removeTaskFromList={removeTaskFromList} setTaskEditable={setTaskEditable} />
-                            })
-                        }
-
+                        <div className='show-list-contain'>
+                            {
+                                taskList.map((taskItem, index) => {
+                                    const { id, title, description, priority } = taskItem;
+                                    return <Task id={id} title={title} description={description} priority={priority} key={index} removeTaskFromList={removeTaskFromList} setTaskEditable={setTaskEditable} />
+                                })
+                            }
+                        </div>
                     </div>
                 </div>
                 <div>
                     <h2 className='text-center'>
                         {isEdit ? `'Upadate Task' ${id}` : 'Add Task'}</h2>
-                    <div className='add-tas-form-container'>
+                    <div className='add-task-form-container'>
 
                         <form>
 
@@ -203,7 +205,10 @@ const Home = () => {
 
                 </div>
             </div>
+            <Footer/>
         </div>
+        
+        
     )
 }
 
